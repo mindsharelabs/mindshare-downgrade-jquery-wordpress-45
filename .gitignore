@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Mindshare .gitignore template v 1.0.4
 # https://raw.githubusercontent.com/mindsharestudios/gitignore/master/.gitignore
 
@@ -204,3 +205,23 @@ local.properties
 
 #sftp configuration file
 sftp-config.json
+=======
+*.log
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+/readme.html
+/license.txt
+
+>>>>>>> 71b9db2c7548bc6e931358236f2adb5c2f4073d6
