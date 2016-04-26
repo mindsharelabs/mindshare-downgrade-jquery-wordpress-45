@@ -3,7 +3,7 @@
 Plugin Name: Downgrade jQuery Fix for WordPress 4.5
 Plugin URI: https://mindsharelabs.com/
 Description: Downgrade jQuery Fix for WordPress 4.5
-Version: 0.3
+Version: 0.4
 Author: Mindshare Labs, Inc.
 Author URI: https://mind.sh/are/
 License: GNU General Public License
@@ -52,16 +52,13 @@ if (version_compare($wp_version, MINDSHARE_DOWNGRADE_JQUERY_MIN_WP_VERSION, "<")
 
 function mindshare_fix_jquery_wp45() {
 
-	//if (!is_admin()) {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', '//code.jquery.com/jquery-' . MINDSHARE_DOWNGRADE_JQUERY_VERSION . '.min.js', FALSE, MINDSHARE_DOWNGRADE_JQUERY_VERSION, FALSE);
-	//wp_enqueue_script('jquery');
 
 	wp_deregister_script('jquery-migrate');
 	wp_register_script('jquery-migrate', '//code.jquery.com/jquery-migrate-1.2.1.min.js', array('jquery'), '1.2.1', FALSE);
-	//wp_enqueue_script('jquery-migrate');
-	//}
-
+	wp_enqueue_script('jquery-migrate');
 }
 
+//add_action('admin_enqueue_scripts', 'mindshare_fix_jquery_wp45');
 add_action('wp_enqueue_scripts', 'mindshare_fix_jquery_wp45');
